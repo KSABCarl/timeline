@@ -34,7 +34,7 @@ function renderTimeline(project, target) {
             etpl = event_tpl.replace('#title#',edata.name).replace('#info#', edata.note);
         }
         tpl = tpl.replace('#event#', etpl);
-        var nextmonth = $(tpl);
+        var nextmonth = jQuery(tpl);
         if (i <= now) {
             nextmonth.addClass('past');
         }
