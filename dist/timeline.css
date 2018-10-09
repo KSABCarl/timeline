@@ -56,9 +56,10 @@
   .event:hover {
     z-index: 10; }
     .event:hover h4 {
-      display: block !important; }
-    .event:hover .info {
-      background-color: rgba(255, 255, 255, 0.8); }
+      display: block !important;
+      background-color: rgba(255, 255, 255, 0.9); }
+    .event:hover h2 {
+      background-color: rgba(255, 255, 255, 0.9); }
 
 svg.dot {
   position: absolute;
@@ -99,6 +100,9 @@ svg.dot {
 .event.red svg.dot {
   fill: red; }
 
+.event.red .info {
+  border-color: red; }
+
 .event.red .info h2, .event.red .info h4 {
   color: red !important; }
 
@@ -107,6 +111,9 @@ svg.dot {
 
 .event.blue svg.dot {
   fill: blue; }
+
+.event.blue .info {
+  border-color: blue; }
 
 .event.blue .info h2, .event.blue .info h4 {
   color: blue !important; }
@@ -117,6 +124,9 @@ svg.dot {
 .event.green svg.dot {
   fill: green; }
 
+.event.green .info {
+  border-color: green; }
+
 .event.green .info h2, .event.green .info h4 {
   color: green !important; }
 
@@ -125,6 +135,9 @@ svg.dot {
 
 .event.purple svg.dot {
   fill: purple; }
+
+.event.purple .info {
+  border-color: purple; }
 
 .event.purple .info h2, .event.purple .info h4 {
   color: purple !important; }
