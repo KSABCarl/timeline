@@ -54,7 +54,8 @@
   .event.high .info {
     bottom: 50px; }
   .event:hover {
-    z-index: 10; }
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8); }
     .event:hover h4 {
       display: block !important; }
 
