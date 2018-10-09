@@ -22,7 +22,7 @@ function renderTimeline(project, target) {
       var now = (new Date()).getMonth() -7;
       if (now < 0) now += 12;
       
-      var isHigh = false;
+      var isHigh = true;
       var shuffcol = colors.sort(() => Math.random() - 0.5);
       
       months.forEach(function(m, i) {
