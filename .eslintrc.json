@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+ 
+  "globals": {
+    "$": false
+  },
+ 
+  "parser": "babel-eslint",
+ 
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+  ],
+ 
+  "rules": {
+    "brace-style": ["error", "1tbs"]
+  }
+}
