@@ -97,7 +97,7 @@ svg.dot {
 .event.red svg.dot {
   fill: red; }
 
-.event.red .info {
+.event.red .info h2, .event.red .info h4 {
   color: red !important; }
 
 .event.blue .bar {
@@ -106,7 +106,7 @@ svg.dot {
 .event.blue svg.dot {
   fill: blue; }
 
-.event.blue .info {
+.event.blue .info h2, .event.blue .info h4 {
   color: blue !important; }
 
 .event.green .bar {
@@ -115,7 +115,7 @@ svg.dot {
 .event.green svg.dot {
   fill: green; }
 
-.event.green .info {
+.event.green .info h2, .event.green .info h4 {
   color: green !important; }
 
 .event.purple .bar {
@@ -124,5 +124,5 @@ svg.dot {
 .event.purple svg.dot {
   fill: purple; }
 
-.event.purple .info {
+.event.purple .info h2, .event.purple .info h4 {
   color: purple !important; }
