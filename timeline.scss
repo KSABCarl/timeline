@@ -1,3 +1,11 @@
+$colors: (
+   purple: rgb(102, 49, 143),
+   orange: rgb(241, 93, 37),
+   red: rgb(233, 43, 94),
+   green: rgb(61, 188, 162),
+   blue: rgb(0, 93, 172)
+);
+
 .timeline * {
    padding: 0;
    margin: 0;
@@ -20,15 +28,15 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  background-color: blue;
+  background-color: map-get($colors, blue);
   border-top: 1px solid #777;
   border-bottom: 1px solid #777;
   
   &.past {
-   background-color: purple;
+   background-color: map-get($colors, purple);
   }
   &.today {
-   background-color: green;
+   background-color: map-get($colors, green);
   }
   
   &:first-child {
@@ -124,22 +132,20 @@ svg.dot {
 
 @mixin eventcolor($color) {
    .bar {
-      border-color: $color;
+      border-color: map-get($colors, $color);
    }
    svg.dot {
-      fill: $color;
+      fill: map-get($colors, $color);
    }
    .info {
-      border-color: $color;
+      border-color: map-get($colors, $color);
    }
    .info h2, .info h4 {
-      color: $color !important;
+      color: map-get($colors, $color) !important;
    }
 }
 
-$colors: red, blue, green, purple;
-
-@each $col in $colors {
+@each $col in map-keys($colors) {
    .event.#{$col} {
       @include eventcolor($col)  
    }
