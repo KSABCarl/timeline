@@ -20,9 +20,27 @@ var timeline = (json_url) => {
   var applyTimelines = (data) => {
     let targets = document.querySelectorAll('timeline');
     targets.forEach((t) => {
-      let name = t.getAttribute('for');
-      let project = data.find(p => p.Projekt == name);
-      render(project, t);
+      if (data !== false) {
+        let name = t.getAttribute('for');
+        let project = data.find(p => p.Projekt == name);
+        render(project, t);  
+      } else {
+        let data = t.innerText;
+        let project = {
+          Projekt: 'unknown',
+          m: {}
+        };
+        let myRegexp = /\[(\w{3})\] ([^\[]+)/g;
+        let match = myRegexp.exec(data);
+        while (match != null) {
+          let month = match[1];
+          let [name, note] = match[2].split(' : ');
+          project.m[month] = {name: name, note: note || ''};
+          match = myRegexp.exec(data);
+        }
+        render(project, t);  
+      }
+      
     });
   }
 
@@ -38,7 +56,7 @@ var timeline = (json_url) => {
   }
 
   var render = (data, target) => {
-
+    
     let now = (new Date()).getMonth() - 7;
     if (now < 0) now += 12;
 
@@ -46,7 +64,8 @@ var timeline = (json_url) => {
     let shuffcol = colors.sort(() => Math.random() - 0.5);
 
     let month_html = '';
-
+    let j = 0;
+    
     months.forEach((m, i) => {
       let tpl = month_tpl.replace('#month#', m);
       let etpl = '';
@@ -54,6 +73,7 @@ var timeline = (json_url) => {
         isHigh = !isHigh;
         let edata = data.m[m];
         etpl = event_tpl.replace('#title#',edata.name).replace('#info#', edata.note);
+        j++;
       }
       tpl = tpl.replace('#event#', etpl);
       let mclasses = '';
@@ -65,7 +85,7 @@ var timeline = (json_url) => {
         tpl = tpl.replace('#mclasses#', '');
       }
 
-      let col = shuffcol[i % shuffcol.length];
+      let col = shuffcol[j % shuffcol.length];
 
       if (isHigh) {
         tpl = tpl.replace('#eclasses#', 'high '+col);
@@ -74,14 +94,19 @@ var timeline = (json_url) => {
       }
       month_html += tpl;
     });
-
+    
     let $timeline = createFragment('<div class="timeline">'+month_html+'</div>');
-
+    
     target.before($timeline);
     target.remove();
   }
+  
+  if (json_url) {
+    fetch(json_url)
+      .then(resp => resp.json())
+      .then(data => applyTimelines(data));    
+  } else {
+    applyTimelines(false);
+  }
 
-  fetch(json_url)
-    .then(resp => resp.json())
-    .then(data => applyTimelines(data));
 }
