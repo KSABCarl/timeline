@@ -2,7 +2,7 @@ var timeline = (json_url) => {
   'use strict';
 
   const months = ['Aug', 'Sep', 'Okt', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun'];
-  const colors = ['red', 'blue', 'green', 'purple'];
+  const colors = ['red', 'blue', 'green', 'purple', 'orange'];
 
   const event_tpl = '<div class="event #eclasses#">' +
     '<svg height="18"  width="18" class="dot">' +

@@ -18,13 +18,13 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  background-color: blue;
+  background-color: #005dac;
   border-top: 1px solid #777;
   border-bottom: 1px solid #777; }
   .month.past {
-    background-color: purple; }
+    background-color: #66318f; }
   .month.today {
-    background-color: green; }
+    background-color: #3dbca2; }
   .month:first-child {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; }
@@ -94,50 +94,62 @@ svg.dot {
     font-style: italic;
     display: none !important; }
 
-.event.red .bar {
-  border-color: red; }
-
-.event.red svg.dot {
-  fill: red; }
-
-.event.red .info {
-  border-color: red; }
-
-.event.red .info h2, .event.red .info h4 {
-  color: red !important; }
-
-.event.blue .bar {
-  border-color: blue; }
-
-.event.blue svg.dot {
-  fill: blue; }
-
-.event.blue .info {
-  border-color: blue; }
-
-.event.blue .info h2, .event.blue .info h4 {
-  color: blue !important; }
-
-.event.green .bar {
-  border-color: green; }
-
-.event.green svg.dot {
-  fill: green; }
-
-.event.green .info {
-  border-color: green; }
-
-.event.green .info h2, .event.green .info h4 {
-  color: green !important; }
-
 .event.purple .bar {
-  border-color: purple; }
+  border-color: #66318f; }
 
 .event.purple svg.dot {
-  fill: purple; }
+  fill: #66318f; }
 
 .event.purple .info {
-  border-color: purple; }
+  border-color: #66318f; }
 
 .event.purple .info h2, .event.purple .info h4 {
-  color: purple !important; }
+  color: #66318f !important; }
+
+.event.orange .bar {
+  border-color: #f15d25; }
+
+.event.orange svg.dot {
+  fill: #f15d25; }
+
+.event.orange .info {
+  border-color: #f15d25; }
+
+.event.orange .info h2, .event.orange .info h4 {
+  color: #f15d25 !important; }
+
+.event.red .bar {
+  border-color: #e92b5e; }
+
+.event.red svg.dot {
+  fill: #e92b5e; }
+
+.event.red .info {
+  border-color: #e92b5e; }
+
+.event.red .info h2, .event.red .info h4 {
+  color: #e92b5e !important; }
+
+.event.green .bar {
+  border-color: #3dbca2; }
+
+.event.green svg.dot {
+  fill: #3dbca2; }
+
+.event.green .info {
+  border-color: #3dbca2; }
+
+.event.green .info h2, .event.green .info h4 {
+  color: #3dbca2 !important; }
+
+.event.blue .bar {
+  border-color: #005dac; }
+
+.event.blue svg.dot {
+  fill: #005dac; }
+
+.event.blue .info {
+  border-color: #005dac; }
+
+.event.blue .info h2, .event.blue .info h4 {
+  color: #005dac !important; }
