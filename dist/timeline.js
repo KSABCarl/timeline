@@ -27,7 +27,7 @@ var timeline = (json_url) => {
       } else {
         let data = t.innerText;
         let project = {
-          Projekt: 'unknown',
+          Projekt: 'unnamed',
           m: {}
         };
         let myRegexp = /\[(\w{3})\] ([^\[]+)/g;
